@@ -305,11 +305,11 @@
   305  grep -c '6[aeiouAEIOU]' scarlet.txt
   306  grep -ioc '6[aeiouAEIOU]' scarlet.txt
   307  grep -c '^[aeiouAEIOU]' scarlet.txt
-  308* grep -c '^[aeiouAEIOU]' scarlet.txt | 
+  308  grep -c '^[aeiouAEIOU]' scarlet.txt | 
   309  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -l
   310  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -o
   311  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -co
-  312* grep -c '^[aeiouAEIOU]' scarlet.txt | 
+  312  grep -c '^[aeiouAEIOU]' scarlet.txt | 
   313  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -c scarlet.txt
   314  wc '^[aeiou]' scarlet.txt 
   315  ls
@@ -318,3 +318,168 @@
   318  cd -
   319  ls
   320  history | head -n 10000 > cmds 
+  321  git commit -am stuff
+  322  git push
+  323  ls
+  324  grep -c '^[aeiouAEIOU]' scarlet.txt | ls -c '^[aeiou]'
+  325  grep -c '^[aeiouAEIOU]' scarlet.txt | ls scarlet.txt '^[aeiou]'
+  326  grep -c '^[aeiouAEIOU]' scarlet.txt |
+  327  grep -c '^[aeiouAEIOU]' scarlet.txt
+  328  grep '^[aeiouAEIOU]' scarlet.txt
+  329  grep -io '^[aeiouAEIOU]' scarlet.txt
+  330  grep -o 'judge' | wc -l
+  331  grep -o 'judge' *.txt | wc -l
+  332  cd biosys-analytics
+  333  cd assignments
+  334  cd 01-unix-grad
+  335  cd files
+  336  grep -o 'judge' *.txt | wc -l
+  337  grep -o 'Judge' *.txt | wc -l
+  338  grep -io 'Judge' *.txt | wc -l
+  339  grep -o 'human' *.txt
+  340  grep -o 'human' *.txt | wc -f
+  341  grep human * -lR 
+  342  grep -io 'scarlet' scarlet.txt | wc -l
+  343  grep scarlet scarlet.txt
+  344  grep -o scarlet scarlet.txt
+  345  grep -o scarlet scarlet.txt | wc -l
+  346  grep -io 'scarlet' *.txt | wc -l
+  347  grep -io 'scarlet' const.txt | wc -l
+  348  grep -io 'scarlet' usdeclar.txt | wc -l
+  349  grep -io 'scarlet' scarlet.txt | wc -l
+  350  grep -io 'scarlet' 25344-0.txt | wc -l
+  351  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -o scarlet.txt
+  352  ls
+  353  grep -io 'scarlet' scarlet.txt | wc -l
+  354  grep -io 'scarlet' 25344-0.txt | wc -l
+  355  head -15 const.txt
+  356  head -15 *.txt > foo.txt 
+  357  cat foo.txt
+  358  head -15 *.txt > foo.txt wc -l foo.txt
+  359  ls
+  360  wc -l foo.txt
+  361  cat foo.txt
+  362  ls
+  363  head -15 *.txt > foo.txt 
+  364  ls
+  365  cat foo.txt
+  366  wc -l foo.txt
+  367  rm foo.txt
+  368  ls
+  369  history > cmds
+  370  git add -A files
+  371  ls
+  372  cat cmds
+  373  ls
+  374  wget -o scarlet.txt https://www.gutenberg.org/files/25344/25344-0.txt
+  375  ls
+  376   
+  377  rm 25344-0.txt1
+  378  ls
+  379  rm 25344-0.txt
+  380  ls
+  381  Grep -io 'scarlet' scarlet.txt | wc -l
+  382  Grep -io 'scarlet' 25344-0.txt | wc -l
+  383  Grep -io 'scarlet' 25344-0.txt1 | wc -l
+  384  grep -io 'scarlet' 25344-0.txt | wc -l
+  385  grep -io 'scarlet' 25344-0.txt1 | wc -l
+  386  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -O scarlet.txt
+  387  ls
+  388  grep -io 'scarlet' scarlet.txt
+  389  grep -io 'scarlet' scarlet.txt | wc -l
+  390  md5sum *.txt
+  391  ls
+  392  head -15 *.txt > foo.txt
+  393  wc -l foo.txt
+  394  cat foo.txt
+  395  rm foo.txt 
+  396  ls
+  397  grep '^[c]' | wc -l
+  398  cd biosys-analytics
+  399  cd assignments
+  400  ls
+  401  01-unix-grad
+  402  cd 01-unix-grad
+  403  ls
+  404  pwd
+  405  cd files
+  406  ls
+  407  git add -A files
+  408  cd
+  409  cd biosys-analytics
+  410  cd assignments 
+  411  cd 01-unix-grad
+  412  ls
+  413  git add -A files
+  414  git commit -m 'all undergrad done' files
+  415  git push
+  416  cd files
+  417  ls
+  418  grep -o '^[aeiou]' *.txt
+  419  grep -o '^[aeiou]' scarlet.txt
+  420  man sort
+  421  grep -o '^[aeiou]' scarlet.txt | sort -f
+  422  grep -o '^[aeiou]' scarlet.txt | sort -f | uniq -c
+  423  grep -io '^[aeiou]' scarlet.txt | sort -f | uniq -c
+  424  grep -io '^[AEIOUaeiou]' scarlet.txt | sort -f | uniq -c
+  425  grep -io '^[aeiou]' scarlet.txt | sort -f | uniq -c
+  426  history > commands
+  427  cat commands
+  428  q
+  429  cd
+  430  cd biosys-analytics
+  431  cd assignments/
+  432  cd 01-unix-grad 
+  433  git add files 
+  434  git commit -m 'both undergrad and grad work all done' files
+  435  git push 
+  436  cd
+  437  cd biosys-analytics
+  438  cd assignments 
+  439  cd 01-unix
+  440  ls
+  441  cd files
+  442  ls
+  443  cat scarlet.txt
+  444  q
+  445  ls -l
+  446   wc -l *.txt
+  447  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -O scarlet.txt
+  448  ls -l
+  449  wc -l *.txt
+  450  find -size +100
+  451  file const.txt 
+  452  md5sum *.txt
+  453  df
+  454  grep -io 'judge' *.txt | wc -l
+  455  grep human * - lR
+  456  grep human *.txt - lR
+  457  grep -c human *.txt - lR
+  458  grep -c human *.txt - R
+  459  grep human *.txt - lR
+  460  grep human *.txt 
+  461  grep -c human *.txt 
+  462  grep -lR human *.txt 
+  463  grep -io 'scarlet' scarlet.txt | wc -l
+  464  head -15 *.txt > foo.txt
+  465  wc -l foo.txt
+  466  rm foo.txt
+  467  ls
+  468  history > cmds
+  469  cd
+  470  cd biosys-analytics
+  471  cd assignments 
+  472  cd 01-unix
+  473  ls
+  474  git add files
+  475  git commit -m 'all done' files 
+  476  git push
+  477  cd
+  478  cd biosys-analytics
+  479  cd assignments
+  480  cd 01-unix-grad
+  481  cd files
+  482  ls
+  483  rm commands
+  484  grep -lR human *.txt
+  485  history > cmds
