@@ -1,0 +1,57 @@
+ls -l
+total 600
+-rw-r--r-- 1 antoniog1 student  12281 Jan 22 23:16 cmds
+-rw-r--r-- 1 antoniog1 student  45119 Jan 10 12:23 const.txt
+-rw-r--r-- 1 antoniog1 student 525464 Jan 23  2015 scarlet.txt
+-rw-r--r-- 1 antoniog1 student   8685 Jan  4 14:27 usdeclar.txt
+[antoniog1@login3 files]$ wc -l *.txt
+   872 const.txt
+  9122 scarlet.txt
+   176 usdeclar.txt
+ 10170 total
+[antoniog1@login3 files]$ find -size +100
+./scarlet.txt
+[antoniog1@login3 files]$ file const.txt
+const.txt: ASCII English text
+[antoniog1@login3 files]$ md5sum *.txt
+f66a8165c621d48bac2216b2f31e8742  const.txt
+c5b07ebb123c43f90450af354a0c5ec8  scarlet.txt
+7f54939b30ae7b6d45d473a4c82a41b0  usdeclar.txt
+[antoniog1@login3 files]$ df
+Filesystem               1K-blocks          Used    Available Use% Mounted on
+/dev/sda2                944785812      27855568    868931168   4% /
+none                      98884376             4     98884372   1% /dev/shm
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/rsgrps
+                     1543570980864 1180924914688 362646066176  77% /rsgrps
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/pbs
+                       35970351104    6913946624  29056404480  20% /pbs
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/Bright_cm_shared
+                       35970351104    6913946624  29056404480  20% /cm/shared
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs1/bio5
+                        4294967296     410201088   3884766208  10% /bio5
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/unsupported
+                       35970351104    6913946624  29056404480  20% /unsupported
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/extra
+                      540897443840   47569604608 493327839232   9% /extra
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs3/xdisk
+                       10737418240             0  10737418240   0% /xdisk
+hpc-nfs0-10g.hpc.arizona.edu:/gsfs2/home
+                       35970351104    6913946624  29056404480  20% /home
+[antoniog1@login3 files]$ grep -io 'judge' *.txt | wc -l
+22
+[antoniog1@login3 files]$ grep -lR 'scarlet' scarlet.txt | wc -l
+1
+[antoniog1@login3 files]$ grep -lR 'human' *.txt
+scarlet.txt
+usdeclar.txt
+[antoniog1@login3 files]$ grep -io 'scarlet' scarlet.txt | wc -l 
+124
+[antoniog1@login3 files]$ head -15 *.txt > foo.txt
+[antoniog1@login3 files]$ wc -l foo.txt
+50 foo.txt
+[antoniog1@login3 files]$ rm foo.txt
+[antoniog1@login3 files]$ ls 
+cmds  const.txt  scarlet.txt  usdeclar.txt
+[antoniog1@login3 files]$ history > cmds
+[antoniog1@login3 files]$ ls
+cmds  const.txt  scarlet.txt  usdeclar.txt

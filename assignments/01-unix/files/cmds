@@ -466,3 +466,49 @@
   466  rm foo.txt
   467  ls
   468  history > cmds
+  469  cd
+  470  cd biosys-analytics
+  471  cd assignments 
+  472  cd 01-unix
+  473  ls
+  474  git add files
+  475  git commit -m 'all done' files 
+  476  git push
+  477  cd
+  478  cd biosys-analytics
+  479  cd assignments
+  480  cd 01-unix-grad
+  481  cd files
+  482  ls
+  483  rm commands
+  484  grep -lR human *.txt
+  485  history > cmds
+  486  ls
+  487  cd
+  488  cd biosys-analytics
+  489  cd assignments 
+  490  cd 01-unix-grad
+  491  ls
+  492  git add files 
+  493  git commit -m 'all done' files
+  494  git push 
+  495  cd biosys-analytics
+  496  cd assignments
+  497  cd 01-unix
+  498  cd files
+  499  ls
+  500  ls -l
+  501  wc -l *.txt
+  502  find -size +100
+  503  file const.txt
+  504  md5sum *.txt
+  505  df
+  506  grep -io 'judge' *.txt | wc -l
+  507  grep -lR 'scarlet' scarlet.txt | wc -l
+  508  grep -lR 'human' *.txt
+  509  grep -io 'scarlet' scarlet.txt | wc -l 
+  510  head -15 *.txt > foo.txt
+  511  wc -l foo.txt
+  512  rm foo.txt
+  513  ls 
+  514  history > cmds
