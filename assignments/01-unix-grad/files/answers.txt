@@ -1,0 +1,31 @@
+grep '^[cs]' *.txt | wc -l
+947
+[antoniog1@login3 files]$ ls
+25344-0.txt.1  cmds  const.txt  scarlet.txt  usdeclar.txt
+[antoniog1@login3 files]$ rm cmds
+[antoniog1@login3 files]$ grep '^[cs]' *.txt | wc -l
+947
+[antoniog1@login3 files]$ ls
+25344-0.txt.1  const.txt  scarlet.txt  usdeclar.txt
+[antoniog1@login3 files]$ grep '^Article [0-9]' *.txt
+const.txt:Article 1.
+const.txt:Article 2.
+const.txt:Article 3.
+const.txt:Article 4.
+const.txt:Article 5.
+const.txt:Article 6.
+const.txt:Article 7.
+[antoniog1@login3 files]$ grep -c '^$' const.txt
+169
+[antoniog1@login3 files]$ grep -io '^[aeiou]' scarlet.txt | sort -f | uniq -c
+    633 a
+     59 A
+    199 e
+     10 E
+    348 i
+     88 I
+    358 o
+     20 O
+     80 u
+      6 U
+[antoniog1@login3 files]$ history > cmds
