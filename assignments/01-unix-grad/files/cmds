@@ -1,0 +1,320 @@
+    1  echo "HEllo"
+    2  pwd
+    3  cat .ssh/id_dsa.pub 
+    4  los
+    5  ls
+    6  git clone ssh-dss AAAAB3NzaC1kc3MAAACBAPj6BXpv6O65CiF6M5XRKM0C7gt6FVpxjok7bH/ecMcZZ2cPLBHAvi2F8ZSZb39NtHSLmI925sXjADEQRdSS49RW63do/j
+    7  gYeqNxFZSdQEWxCycF7SGrinpYjLgju/eflST3TYXSmxVhMMgF6hjbhhigAP98CzjhaHWDf3qewl/TAAAAFQCECMNSSiEHEnNqup7G0Dpvt+9+MwAAAIEAubdt
+    8  yKeAkJcnTcSrmmq2fZCQwsnDQMiNpDaJG5xcsCoTzGZ4bPfeWgR5A6sMVu3RrMJsthVCvwB8gdtWQaO03fu2RDazEyG3qesll+ENrBFGkPFaATZHPDuMl33njt
+    9  18Pm8kT/tvEC7UxBZaCFMURvmZ5g/uqpTNfYjyItq/C8IAAACBAISAOCfa5ZzfsJiARVfmNxp7QKIatLOk+tfFvqc7Nfdla58OqbvfFGBeNRx8k4j6ikpEs7ak
+   10  git clone git@github.com:antoniog1995/biosys-analytics.git
+   11  cd biosys-analytics/lectures/
+   12  cd 01-intro/
+   13  ls
+   14  less intro.md 
+   15  cd ../../
+   16  pwd
+   17  git remote add upstream https://github.com/hurwitzlab/biosys-analytics.git
+   18  git pull upstream master
+   19  ls
+   20  cd lectures/02-unix/
+   21  ls
+   22  open 02-unix.pdf 
+   23  open 02-unix.pdf
+   24  ls
+   25  cd biosys-analytics
+   26  ls
+   27  cd assignments
+   28  ls
+   29  cd 01-unix
+   30  ls
+   31  open README.md
+   32  cd 01-unix
+   33  cat README.md
+   34  mkdir files
+   35  ls
+   36  usdeclar.txt curl -s https://www.constitution.org/usdeclar.txt
+   37  https://www.constitution.org/usdeclar.txt
+   38  cd files
+   39  curl https://www.constitution.org/usdeclar.txt
+   40  q
+   41  curl  https://www.usconstitution.net/const.txt 
+   42  ls
+   43  cd
+   44  ls
+   45  cd biosys-analytics
+   46  ls
+   47  cd lectures
+   48  ls
+   49  cat 01-intro
+   50  cd 01-intro
+   51  ls
+   52  cat intro.md
+   53  cat Makefile
+   54  cd
+   55  cd biosys-analytics
+   56  ls
+   57  cd assignments
+   58  ls
+   59  cd 01-unix
+   60  ls
+   61  cat README.md
+   62  cd biosys-analytics
+   63  ls
+   64  cd assignments 
+   65  l
+   66  ls
+   67  cd 01-unix
+   68  ls
+   69  cd files
+   70  ls
+   71  wget https://www.constitution.org/usdeclar.txt 
+   72  wget https://www.usconstitution.net/const.txt 
+   73  wget https://www.gutenberg.org/files/25344/25344-0.txt -o scarlet.txt
+   74  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -o scarlet.txt 
+   75  ld
+   76  ls
+   77  rm 25344-0.txt
+   78  ls
+   79  wc const.txt
+   80  wc usdeclar.txt
+   81  wc scarlet.txt
+   82  ls -l 
+   83  find files -size +50000
+   84  find -size +50000
+   85  ls
+   86  find -type f -size +50000
+   87  ls
+   88  man find
+   89  cd
+   90  cd biosys-analytics
+   91  cd assignments
+   92  ls
+   93  cd
+   94  gitpul upstream master
+   95  gitpull upstream master
+   96  cd biosys-analytics
+   97  gitpull upstream master
+   98  git pull upstream master
+   99  cd assignments
+  100  ls
+  101  cd 01-unix-grad
+  102  ls
+  103  cat 01-unix-grad.txt
+  104  cp -r files 01-unix-grad
+  105  ls
+  106  mkdir files
+  107  cd files
+  108  wget https://www.constitution.org/usdeclar.txt
+  109  ls
+  110  wget https://www.usconstitution.net/const.txt 
+  111  ls
+  112  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -o scarlet.txt
+  113  ls
+  114  ls -l
+  115  whoami
+  116  echo "hello world" 
+  117  ls
+  118  cd lectures
+  119  ls
+  120  cd lectures
+  121  cd manual
+  122  man
+  123  cd $home
+  124  ls
+  125  cd biosys-analytics
+  126  ls
+  127  cd lectures
+  128  ls
+  129  cd 01-intro
+  130  ls
+  131  cd Makefile
+  132  pwd
+  133  head
+  134  cd biosys-analytics
+  135  cd assignments
+  136  ls
+  137  cd 01-unix-grad
+  138  ls
+  139  cd files
+  140  ls
+  141  ls -l
+  142  wc -w *files*
+  143  ls
+  144  wc -l *.txt
+  145  wc const.txt
+  146  wc scarlet.txt
+  147  wc usdeclar
+  148  wc usdeclar.txt
+  149  lc -l *.txt
+  150  ls
+  151  find / -size +50K
+  152  find / -size +50k
+  153  cd biosys-analytics
+  154  cd assignments
+  155  cd 01-unix-grad
+  156  ls
+  157  cd files
+  158  wc -l *.txt
+  159  ls -l
+  160  find / -size +50k
+  161  cd biosys-analytics
+  162  cd assignments
+  163  cd 01-unix-grad
+  164  cd files
+  165  grep judge * -l
+  166  grep -w judge | wc -l
+  167  cd
+  168  ls
+  169  cd biosys-analytics
+  170  ls
+  171  cd lectures
+  172  ls
+  173  cd 01-intro
+  174  ls
+  175  cd 01-intro.pdf
+  176  open 01-intro.pdf
+  177  ls
+  178  man
+  179  ls
+  180  cd
+  181  cd biosys-analytics
+  182  ls
+  183  open README.md
+  184  $open README.md
+  185  man
+  186  ls
+  187  pwd
+  188  git pull upstream master
+  189  ls
+  190  cd lectures
+  191  clear
+  192  ls
+  193  cd
+  194  cd biosys-analytics
+  195  ls
+  196  cd assignments
+  197  ls
+  198  cd 01-unix-grad
+  199  ls
+  200  cd files
+  201  ls
+  202  ls-l
+  203  ls -l
+  204  wc const.txt
+  205  wc scarlet.txt
+  206  wc usdeclar.txt
+  207  wc
+  208   -size +100
+  209  file const.txt
+  210  man md5sum
+  211  md5sum *.txt
+  212  df
+  213  man df
+  214  man grep
+  215  grep judge
+  216  cd biosys-analytics
+  217  cd assignments
+  218  cd 01-unix-grad
+  219  ls
+  220  cd files
+  221  find /files -size +50k
+  222  man find
+  223  find -type .txt -size +50k
+  224  find -type f -size +50k
+  225  ls
+  226  find -size +100
+  227  ls
+  228  find -size +100
+  229  ls
+  230  file const.txt
+  231  wc -l 
+  232  cd biosys-analytics
+  233  cd assignments
+  234  ls
+  235  cd 01-unix-grad
+  236  cd files
+  237  ls
+  238  grep '^[a]' *.txt | wc -l
+  239  grep '^[ca]' *.txt | wc -l
+  240  grep '^[c]' *.txt | wc -l
+  241  grep '^[s]' *.txt | wc -l
+  242  grep '^[cs]' *.txt | wc -l
+  243  grep '^Article [0-9]' 
+  244  grep '^Article [0-9]' *.txt
+  245  grep '^Article [0-9]' *.txt | ls -l
+  246  grep '^Article [0-9]' *.txt
+  247  ls
+  248  grep -c '^$' const.txt
+  249  grep '^[a,e,i,o,u,A,E,I,O,U]' scarlet.txt
+  250  grep '^[a,e,i,o,u,A,E,I,O,U]' scarlet.txt | ls -l
+  251  grep '^[a,e,i,o,u,A,E,I,O,U]' scarlet.txt | ls -wl
+  252  grep '^[a,e,i,o,u,A,E,I,O,U]' scarlet.txt | ls -l
+  253  grep '^[a,e,i,o,u,A,E,I,O,U]' scarlet.txt | ls -w
+  254  grep '^[aeiouAEIOU]' scarlet.txt | ls -w
+  255  grep '^[aeiouAEIOU]' scarlet.txt | ls -l
+  256  grep -c '^[aeiouAEIOU]' scarlet.txt | ls -l
+  257  rm scarlet.txt
+  258  ls
+  259  wget -c https://www.gutenberg.org/files/25344/25344-0.txt -O scarlet.txt
+  260  ls
+  261  wc -l *.txt
+  262  find -size +100 
+  263  find -size +100 *.txt
+  264  file const.txt
+  265  md5sum *.txt
+  266  df
+  267  Grep -io 'judge' *.txt | wc -l
+  268  grep -io 'judge' *.txt | wc -l
+  269  grep human * -lR
+  270  grep 'human' * -lR
+  271  grep -io 'scarlet' scarlet.txt
+  272  grep -io 'scarlet' scarlet.txt | wc -l
+  273  head -15 *.txt > foo.txt
+  274  cat foo.txt
+  275  wc -l foo.txt
+  276  rm foo.txt
+  277  grep '^[cs]' *.txt | wc -l
+  278  grep 
+  279  grep '^Article [0-9]' *.txt
+  280  grep -c '^$' const.txt
+  281  grep -io '^[aeiou]' scarlet.txt
+  282  grep -io '^[aeiou]' scarlet.txt | ls -l
+  283  grep -io '^[aeiou]' scarlet.txt | ls c
+  284  grep -io '^[AEIOU]' scarlet.txt | ls c
+  285  grep -io '^[AEIOU]' scarlet.txt | ls-lc
+  286  grep -io '^[AEIOU]' scarlet.txt | ls-l
+  287  grep -io '^[AEIOU]' scarlet.txt | ls -l
+  288  grep -io '^[aeiou]' scarlet.txt | ls -c
+  289  grep -io '^[aeiou]' scarlet.txt | ls -w
+  290  ls -- help
+  291  man ls
+  292  grep -io '^[aeiou]' scarlet.txt | ls -C
+  293  grep -io '^[aeiou]' scarlet.txt | ls -d
+  294  grep -l '^[aeiou]' scarlet.txt 
+  295  grep -l '^[aeiou]' scarlet.txt | ls -l
+  296  grep -l '^[aeiou]' scarlet.txt | ls -c
+  297  grep -l '^[aeiou]' scarlet.txt | ls
+  298  grep -l '^[aeiou]' scarlet.txt
+  299  grep -c '^[aeiou]' scarlet.txt
+  300  grep -io '^[aeiou]' scarlet.txt
+  301  grep -E '^[aeiou]' scarlet.txt
+  302  clear
+  303  ls
+  304  grep -c '6[aeiou]' scarlet.txt
+  305  grep -c '6[aeiouAEIOU]' scarlet.txt
+  306  grep -ioc '6[aeiouAEIOU]' scarlet.txt
+  307  grep -c '^[aeiouAEIOU]' scarlet.txt
+  308* grep -c '^[aeiouAEIOU]' scarlet.txt | 
+  309  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -l
+  310  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -o
+  311  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -co
+  312* grep -c '^[aeiouAEIOU]' scarlet.txt | 
+  313  grep -c '^[aeiouAEIOU]' scarlet.txt | wc -c scarlet.txt
+  314  wc '^[aeiou]' scarlet.txt 
+  315  ls
+  316  cd ../
+  317  pwd 
+  318  cd -
+  319  ls
+  320  history | head -n 10000 > cmds 
