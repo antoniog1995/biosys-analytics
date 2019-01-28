@@ -5,9 +5,8 @@ if [[ $# -eq 0 ]]; then
 	exit 1
 fi 
 
-NUM_ITERATIONS=3
 INPUT_FILE=$1
-NUM_ITERATIONS=$2
+NUM_ITERATIONS=${2:-3} 
 
 if [[ ! -f $INPUT_FILE ]]; then 
 	echo "$INPUT_FILE is not a file" 
@@ -19,7 +18,7 @@ i=0
 while read -r LINE; do
     	echo $LINE
     	i=$((i+1))
-    	if [[ $i -eq NUM_ITERATIONS ]]; then
+    	if [[ $i -eq $NUM_ITERATIONS ]]; then
 		break
 	fi 
 done < "$INPUT_FILE"
