@@ -15,5 +15,5 @@ fi
 i=0
 while read -r LINE; do
 	i=$((i+1))
-    	echo $i $LINE
+    	echo $i "$LINE"
 done < "$INPUT_FILE" 
