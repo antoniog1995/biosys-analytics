@@ -52,7 +52,7 @@ def main():
     n = len(input_string) - k + 1
     
     if codons is None:
-        die('codon file required')
+        die('usage')
     if not os.path.isfile(codons):
         die('--codons "{}" is not a file'.format(codons))
     codonTable = {}
