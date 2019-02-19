@@ -45,13 +45,12 @@ def main():
 
     args = get_args()
     codons = args.codons
-    input_string = args.string
-    outfile = args.output
-
+    string = args.string
+    input_string = string.upper()
+    outfile = args.output 
     k = 3 
     n = len(input_string) - k + 1
-
-
+    
     if codons is None:
         die('codon file required')
     if not os.path.isfile(codons):
