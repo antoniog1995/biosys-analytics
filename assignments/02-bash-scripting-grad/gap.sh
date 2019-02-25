@@ -10,16 +10,10 @@ fi
 
 FIRST_LETTER=${1^^}
 
-if [[ $FIRST_LETTER == 'W' ]]; then
-	echo "There are no countries starting with '$1'" 
+if [[ ! -z 'find $DIR -name "$FIRST_LETTER"' ]]; then 
+	echo " There are no countries that start with '$FIRST_LETTER'"
 	exit 1
 fi
-
-if [[ $FIRST_LETTER == 'X' ]]; then
-	echo "There are no countries starting with '$1'" 
-	exit 1
-fi
-
 find $DIR -name "$FIRST_LETTER*" -exec basename {} ';' 
 
 
