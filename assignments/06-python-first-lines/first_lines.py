@@ -55,7 +55,7 @@ def main():
                 first_line = f.readline().rstrip()
                 dir_dict[first_line] = filename
         for line, file in sorted(dir_dict.items()):
-            num_per = width - len(line) 
+            num_per = width - len(line) - len(file) 
             ellipses = "." * num_per
             print('{} {} {}'.format(line,ellipses,file))
 # --------------------------------------------------
