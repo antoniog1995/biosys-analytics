@@ -65,7 +65,8 @@ def main():
     gc = 0 
     total = 0
     num_seq = 0
-    
+    if percentGClim < 0 or percentGClim > 100:
+        die('--pct_gc "{}" must be between 0 and 100'.format(percentGClim))
     if not os.path.isdir(outdir):
         os.makedirs(outdir)
 
