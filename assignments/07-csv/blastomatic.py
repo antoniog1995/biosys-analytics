@@ -70,39 +70,55 @@ def main():
     if not os.path.isfile(annotation_file):
         die('"{}" is not a file'.format(annotation_file))
     
-    with open(blast_file) as aFile:
-        reader = csv.DictReader(aFile, delimiter='\t') 
-        reader.fieldnames = "idnumber","seqid","pident" 
-        for row in reader:
-            seqid = row['seqid']
-            pident =row['pident']
-            blast_dict[seqid, pident] = seqid, pident 
+    #with open(blast_file) as aFile:
+        #reader = csv.DictReader(aFile, delimiter='\t') 
+        #reader.fieldnames = "qacver","saccver","pident","length","mismatch","gapopen","qstart","qend","sstart","send","evalue","bitscore" 
+        #for row in reader:
+            #seqid = row['saccver']
+            #pident =row['pident']
+            #blast_dict[seqid] = pident 
     with open(annotation_file) as bFile:
         reader = csv.DictReader(bFile, delimiter=',')
         for row in reader:
             centroid = row['centroid'] 
             genus = row['genus']
+            if genus == "":
+                genus == "NA"
             species = row['species']
             if species == "":
-            	species == "NA" 
-            annotation_dict[centroid, genus, species] = centroid, genus, species 
+                species == "NA"
+            keypoint = (genus,species)
+            annotation_dict[centroid] = keypoint  
+    with open(blast_file) as aFile
+        reader = csv.DictReader(aFile, delimiter='\t')
+        reader.fieldnames = "qacver","saccver","pident","length","mismatch","gapopen","qstart","qend","sstart","send","evalue","bitscore"
+        for row in reader:
+            for line in annotation_dict:
+                if annotation_dict[0] = row[0]
             
     #check = 0
-    for line in blast_dict:
-        for row in annotation_dict:
-            check = 0
-            if row[0] == line[0]:
+     #print("centroid  pident  genus  species") 
+    #for line in blast_dict:
+        #check = 0
+        #for row in annotation_dict:
+            #check == 0
+            #if row[0] == line[0]:
     	        #result_dict[centroid, pident, genus, species] = line[0], line[1], row[1], row[2] 
-    	        print('{} {}'.format(line[0],line[1]), end = " ")
-    	        print('{} {}' .format(row[1],row[2]))
-    	        check == 1
-        result_dict[centroid, pident, genus, species] = line[0], line[1], row[1], row[2]
-        if check == 0:
-            print('Cannot find seq "{}" in lookup'.format(row[0]))
-            result_dict[centroid] = 'cannot find seq "{} in lookup'.format(row[0]) 
+    	        #print('{} {}'.format(line[0],line[1]), end = " ")
+    	        #print('{} {}' .format(row[1],row[2]))
+    	        #for entry in result_dict:
+    	        #    print(entry) 
+    	        #check == 1
+    	        #break
+            #else:
+            	#result_dict[centroid, pident, genus, species] = 'cannot find seq "{} in lookup'.format(row[0]), "","","" 
+            	#print(result_dict) 
+        #result_dict[centroid, pident, genus, species] = line[0], line[1], row[1], row[2]
+                #if check == 0:
+                    #warn('Cannot find seq "{}" in lookup'.format(row[0]))
+                    #result_dict[centroid, pident, genus, species] = 'cannot find seq "{} in lookup'.format(row[0]), "","","" 
         
-    for entry in result_dict:
-    	print(entry) 	    	
+    #print(result_dict)
     
     	        
     
