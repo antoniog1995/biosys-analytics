@@ -83,15 +83,26 @@ def main():
             centroid = row['centroid'] 
             genus = row['genus']
             species = row['species']
+            if species == "":
+            	species == "NA" 
             annotation_dict[centroid, genus, species] = centroid, genus, species 
+            
+    #check = 0
     for line in blast_dict:
         for row in annotation_dict:
-    	    if row['centroid'] == line['seqid']:
-    	        result_dict[centroid, pident, genus, species] = line[seqid], line[pident], row[genus], row[species] 
-    	    else: 
-    	    	print('Cannot find seq "{}" in lookup'.format(row[centroid]))
-    for line in result_dict:
-    	print(line) 	    	
+            check = 0
+            if row[0] == line[0]:
+    	        #result_dict[centroid, pident, genus, species] = line[0], line[1], row[1], row[2] 
+    	        print('{} {}'.format(line[0],line[1]), end = " ")
+    	        print('{} {}' .format(row[1],row[2]))
+    	        check == 1
+        result_dict[centroid, pident, genus, species] = line[0], line[1], row[1], row[2]
+        if check == 0:
+            print('Cannot find seq "{}" in lookup'.format(row[0]))
+            result_dict[centroid] = 'cannot find seq "{} in lookup'.format(row[0]) 
+        
+    for entry in result_dict:
+    	print(entry) 	    	
     
     	        
     
