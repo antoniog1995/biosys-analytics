@@ -84,20 +84,19 @@ def main():
     if not os.path.isfile(uniprot): 
         die('"{}" is not a file'.format(uniprot))
     print('Processing "{}"'.format(uniprot))
-     
+    outfile = open(output,'w') 
+    
     with open(uniprot) as File: 
         #skip_number = 0
         #line_number = 0 
         for line in File:
-            #print(row) 
-            if keyword in line: 
-                key_number += 1
-                
             for skip in skips:
                 if skip in line: 
                     skip_number += 1
                     continue 
-            
+            if keyword in line: 
+                key_number += 1
+    f.close() 
     print('Done, skipped {} and took {}. See output in "{}".'.format(skip_number, key_number, output)) 
                  
             
