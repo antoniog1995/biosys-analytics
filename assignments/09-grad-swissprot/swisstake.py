@@ -84,7 +84,7 @@ def main():
         die('"{}" is not a file'.format(uniprot))
         
     print('Processing "{}"'.format(uniprot))
-    outfile = open(output,'wt') 
+    outfile = open(output,'w') 
     
     skip_number = 0
     line_number = 0 
@@ -92,19 +92,15 @@ def main():
         for record in SeqIO.parse(file,"swiss"):
             #print(record)
             taxa = record.annotations["taxonomy"]
-            #print(taxa) 
-            for line in record.annotations["keywords"]: 
-                if any([a for a in map(str.upper, skips) if a in map(str.upper, taxa)]) == True: 
-                #for skip in skips:
-                #    skip.lower().capitalize()
-                #    if skip in record.annotations["taxonomy"]:
-                        #print([a for a in map(str.upper, skips) if a in map(str.upper, taxa)])
-                        skip_number += 1
-                        break
-                if keyword == line: 
-                    #print(line) 
-                    SeqIO.write(record, output, "fasta")
-                    key_number += 1
+            keywords = record.annotations["keywords"]
+            #print(taxa)
+            #print(keywords) 
+            if any([a for a in map(str.upper, skips) if a in map(str.upper, taxa)]) == True: 
+                skip_number += 1
+                continue 
+            if keyword in keywords:
+                SeqIO.write(record, output, "fasta")
+                key_number += 1  
    
     outfile.close()
     print('Done, skipped {} and took {}. See output in "{}".'.format(skip_number, key_number, output)) 
