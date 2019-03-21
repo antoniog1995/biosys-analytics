@@ -37,7 +37,8 @@ def get_args():
         '--keyword',
         metavar='STR', 
         help='Take on keyword', 
-        default=None)
+        default=None,
+        required=True)
 
     parser.add_argument(
         '-o',
@@ -77,26 +78,36 @@ def main():
     skip_number = 0
     key_number = 0 
     
-    
-    if keyword == None:
-        print('usage: swisstake.py [-h] [-s STR [STR ...]] -k STR [-o FILE] FILE') 
-        die('error: the following arguments are required: -k/--keyword') 
     if not os.path.isfile(uniprot): 
         die('"{}" is not a file'.format(uniprot))
+        
     print('Processing "{}"'.format(uniprot))
-    outfile = open(output,'w') 
+    outfile = open(output,'wt') 
     
-    with open(uniprot) as File: 
-        #skip_number = 0
-        #line_number = 0 
-        for line in File:
-            for skip in skips:
-                if skip in line: 
-                    skip_number += 1
-                    continue 
-            if keyword in line: 
+    skip_number = 0
+    line_number = 0 
+    with open(uniprot) as file:
+        for record in SeqIO.parse(file,"swiss"):
+            print(record)
+            if keyword in record.annotations:
+                SeqIO.write(record, output, "fasta")
                 key_number += 1
-    f.close() 
+    #        print(record)
+    #with open(uniprot) as File: 
+        
+    #        for word in record:
+    #            if word in skips: 
+    #                skip_number += 1
+    #                continue 
+            
+        #for skip in skips:
+         #   if skip in record: 
+          #      skip_number += 1
+           #     break 
+    #            if keyword == word: 
+    #                SeqIO.write(record, output, "fasta") 
+    #                key_number += 1
+    outfile.close()
     print('Done, skipped {} and took {}. See output in "{}".'.format(skip_number, key_number, output)) 
                  
             
