@@ -88,7 +88,6 @@ def main():
     line_number = 0 
     with open(uniprot) as file:
         for record in SeqIO.parse(file,"swiss"):
-            print(record)
             if keyword in record.annotations:
                 SeqIO.write(record, output, "fasta")
                 key_number += 1
