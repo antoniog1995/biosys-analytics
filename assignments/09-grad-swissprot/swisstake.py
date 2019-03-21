@@ -84,7 +84,7 @@ def main():
         die('"{}" is not a file'.format(uniprot))
         
     print('Processing "{}"'.format(uniprot))
-    outfile = open(output,'w') 
+    outfile = open(output,'wt') 
     
     skip_number = 0
     line_number = 0 
@@ -99,8 +99,10 @@ def main():
                 skip_number += 1
                 continue 
             if keyword in keywords:
-                SeqIO.write(record, output, "fasta")
+                SeqIO.write(record, outfile, "fasta")
                 key_number += 1  
+            else:
+                skip_number += 1
    
     outfile.close()
     print('Done, skipped {} and took {}. See output in "{}".'.format(skip_number, key_number, output)) 
