@@ -165,17 +165,25 @@ def main():
         print('{}{}'.format(dealer_one[0],'10'),end=' ')
     else:
         print('{}{}'.format(dealer_one[0],dealer_one[1]),end = ' ')
-    if dealer_two[1] == '0':
-        print('{}{}'.format(dealer_two[0],'10'),end='') 
-    else:
-        print('{}{}'.format(dealer_two[0],dealer_two[1]),end = '')
+    #if dealer_two[1] == '0':
+    #    print('{}{}'.format(dealer_two[0],'10'),end='') 
+    #else:
+    #    print('{}{}'.format(dealer_two[0],dealer_two[1]),end = '')
+        
     if dealer == True:
+        if dealer_two[1] == '0':
+            print('{}{}'.format(dealer_two[0],'10'),end='') 
+        else:
+            print('{}{}'.format(dealer_two[0],dealer_two[1]),end = '')
         if dealer_three[1] == '0':
-            print(' {}{}'.format(dealer_three[0]),'10') 
+            print(' {}{}'.format(dealer_three[0],'10'))
         else:
             print(' {}{}'.format(dealer_three[0],dealer_three[1]))
-    else: 
-        print('') 
+    else:  
+        if dealer_two[1] == '0':
+            print('{}{}'.format(dealer_two[0],'10')) 
+        else:
+            print('{}{}'.format(dealer_two[0],dealer_two[1]))
         
     if player_score < 10:
         print('P [ {}]:'.format(player_score),end=' ')
@@ -186,32 +194,45 @@ def main():
         print('{}{}'.format(player_one[0],'10'),end=' ') 
     else:
         print('{}{}'.format(player_one[0],player_one[1]),end = ' ')
-    if player_two[1] == '0':
-        print('{}{}'.format(player_two[0],'10'),end='') 
-    else:
-        print('{}{}'.format(player_two[0],player_two[1]),end = '')
+    #if player_two[1] == '0':
+    #    print('{}{}'.format(player_two[0],'10'),end='') 
+    #else:
+    #    print('{}{}'.format(player_two[0],player_two[1]),end = '')
+        
     if player == True:
+        if player_two[1] == '0':
+            print('{}{}'.format(player_two[0],'10'), end = '') 
+        else:
+            print('{}{}'.format(player_two[0],player_two[1]),end = '')
         if player_three[1] == '0':
             print(' {}{}'.format(player_three[0],'10')) 
         else:
             print(' {}{}'.format(player_three[0],player_three[1]))
     else: 
-        print('') 
+        if player_two[1] == '0':
+            print('{}{}'.format(player_two[0],'10')) 
+        else:
+            print('{}{}'.format(player_two[0],player_two[1]))
+        #if player_three[1] == '0':
+        #    print(' {}{}'.format(player_three[0],'10')) 
+        #else:
+        #    print(' {}{}'.format(player_three[0],player_three[1]))
         
     
     if player_score > 21:
         die('Player busts! You lose, loser!') 
     if dealer_score > 21:
-        die('Dealer Busts.')
+        die('Dealer busts.')
     if player_score == 21:
-        die('Player Wins. You probably cheated.') 
+        die('Player wins. You probably cheated.') 
     if dealer_score == 21:
-        die('Dealer Wins!') 
+        die('Dealer wins!') 
     
-    if dealer_score < 21:
+    if dealer_score < 18:
         print('Dealer should hit.') 
-    if player_score < 21:
-        print('Player should hit.')           
+    if player_score < 18:
+        print('Player should hit.')   
+              
           
   
     
