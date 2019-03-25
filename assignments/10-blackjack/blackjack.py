@@ -220,13 +220,17 @@ def main():
         
     
     if player_score > 21:
-        die('Player busts! You lose, loser!') 
+        print('Player busts! You lose, loser!') 
+        sys.exit(0) 
     if dealer_score > 21:
-        die('Dealer busts.')
+        print('Dealer busts.')
+        sys.exit(0) 
     if player_score == 21:
-        die('Player wins. You probably cheated.') 
+        print('Player wins. You probably cheated.') 
+        sys.exit(0) 
     if dealer_score == 21:
-        die('Dealer wins!') 
+        print('Dealer wins!') 
+        sys.exit(0) 
     
     if dealer_score < 18:
         print('Dealer should hit.') 
