@@ -89,12 +89,19 @@ def main():
                 species == "NA"
             keypoint = (genus,species)
             annotation_dict[centroid] = keypoint  
-    with open(blast_file) as aFile
+    with open(blast_file) as aFile:
         reader = csv.DictReader(aFile, delimiter='\t')
         reader.fieldnames = "qacver","saccver","pident","length","mismatch","gapopen","qstart","qend","sstart","send","evalue","bitscore"
         for row in reader:
             for line in annotation_dict:
-                if annotation_dict[0] = row[0]
+                if line[0] == row['qacver']:
+                    print('{}\t{}'.format(row['qacver'], row['pident']), end ="\t")
+                    print('{}\t{}'.format(line[1]))
+                    
+                    break
+                
+                warn('Cannot find seq "" in lookup'.format(line[0]))
+
             
     #check = 0
      #print("centroid  pident  genus  species") 
