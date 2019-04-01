@@ -65,63 +65,45 @@ def main():
     month_number_one = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr': '04', 'May':'05','Jun':'06','Jul':'07','Aug':'08','Sep':'09', 'Oct':'10','Nov':'11','Dec':'12'}
     month_number_two = {'January':'01', 'February':'02', 'March':'03', 'April': '04', 'May':'05','June':'06','July':'07','August':'08','September':'09', 'October':'10','November':'11','December':'12'}
     
-    #print(dateparser.parse(date)) 
-    if re.match('\d{4}-\d{2}-\d{2}', date) != None:
-        date_re = re.compile('(?P<year>\d{4})''[/-]''(?P<month>\d{1,2})''[/-]''(?P<day>\d{1,2})')
-        match = date_re.match(date)
-        print('{}-{}-{}'.format(match.group('year'),match.group('month'),match.group('day')))
-
-    elif re.match('\d{4}-\d{2}', date) != None:
-        date_re = re.compile('(?P<year>\d{4})''[/-]''(?P<month>\d{1,2})')
-        match = date_re.match(date)
-        print('{}-{}-01'.format(match.group('year'),match.group('month')))
-    elif re.match('\d{8}', date) != None:
-        date_re = re.compile('(?P<year>\d{4})''(?P<month>\d{1,2})''(?P<day>\d{1,2})')
-        match = date_re.match(date)
-        print('{}-{}-{}'.format(match.group('year'),match.group('month'),match.group('day'))) 
-    elif re.match('\d{1,2}/\d{2}',date) != None:
-        date_re = re.compile('(?P<month>\d{1,2})''[/-]''(?P<year>\d{1,2})')
-        match = date_re.match(date) 
-        if len(match.group('month')) == 1:
-            print('20{}-0{}-01'.format(match.group('year'),match.group('month')))
+    date_re_one = re.compile('(?P<year>\d{4})[-](?P<month>\d{1,2})[-](?P<day>\d{1,2})')
+    date_re_two = re.compile('(?P<year>\d{4})[-](?P<month>\d{1,2})')
+    date_re_three = re.compile('(?P<year>\d{4})(?P<month>\d{1,2})(?P<day>\d{1,2})')
+    date_re_four = re.compile('(?P<month>\w{3,9})[-](?P<year>\d{4})')
+    date_re_five = re.compile('(?P<month>\w{3,9})[,][ ](?P<year>\d{4})') 
+    date_re_six = re.compile('(?P<month>\d{1,2})[/](?P<year>\d{2})')
+    
+    match = date_re_one.match(date) or date_re_two.match(date) or date_re_three.match(date) or date_re_four.match(date) or date_re_five.match(date) or date_re_six.match(date) 
+    if match is None: 
+        die('No match')
+    if len(match.group('year')) == 2:
+        year = '20' + match.group('year')
+    else:
+        year = match.group('year') 
+    #month = match.group('month') 
+    if match.group('month') in month_number_one.keys():
+        month = month_number_one[match.group('month')]
+    elif match.group('month') in month_number_two.keys():
+        month = month_number_two[match.group('month')]
+    else:
+        month = match.group('month') 
+    if len(match.group('month')) == 1:
+        month = '0'+match.group('month') 
+    
+    if date_re_one.match(date) != None or date_re_three.match(date) != None:
+        if len(match.group('day')) == 1: 
+            day = '0'+match.group('day')
         else:
-            print('20{}-{}-01'.format(match.group('year'),match.group('month')))
-        #year = data[1] 
-        #month = data[0]
-        #day = '01' 
-        #if len(month) == 1:
-        #    print('20{}-0{}-{}'.format(year,month,day))
-        #else:
-        #    print('20{}-{}-{}'.format(year, month,day)) 
-    elif re.match('(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)-\d{4}', date) != None:
-        date_re = re.compile('(?P<month>\w{2,9})''[/-, ]''(?P<year>\d{4})')
-        match = date_re.match(date) 
+            day = match.group('day')
+    else:
+        day = '01' 
+    #day = match.group('day') if date_re_one.match(date) != None or date_re_three.match(date) != None else '01'
+    
+    #if len(match.group('day')) == 1 and day == match.group('day'):
+    #    day = '0'+match.group('day')
+    print('{}-{}-{}'.format(year,month,day))
         
-        #data = re.split('-|, ', date)
-        #year = data[1]
-        #day = '01'
-        #month = re.match('(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)',date)
-        if match.group('month') in month_number_one:
-            month_number = month_number_one[match.group('month')]
-        elif match.group('month') in month_number_two:
-            month_number = month_number_two[match.group('month')]
-        else:
-            die('unknown month: {}'.format(match.group('month')))
-        print('{}-{}-01'.format(match.group('year'),month_number)) 
-    elif re.match('(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December), \d{4}',date) != None:
-        data = re.split('-|, ', date)
-        year = data[1]
-        day = '01'
-        month = re.match('(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)',date)
-        if month in month_number_one.keys():
-            month_number = month_number_one[month]
-        elif month in month_number_two:
-            month_number = month_number_two[month]
-        else:
-            die('unknown month: {}'.format(month))
-        print('{}-{}-{}'.format(year,month_number,day)) 
-    else: 
-        print('No match') 
+    
+    
             
     
 
