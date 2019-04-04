@@ -10,6 +10,7 @@ import sys
 import re 
 
 
+
 # --------------------------------------------------
 def get_args():
     """get command-line arguments"""
@@ -47,17 +48,29 @@ def main():
     args = get_args()
     base_pass = args.password
     alt_pass = args.alternate 
-
-    pass_re = re.compile(.{0,1}(\w).{0,1}) 
- 
-    password = base_pass.upper() 
-    alternative = alt_pass.upper()
+    
+    #length = len(base_pass) 
+    
+    #pass_re = re.compile('(?P<password>\w{len})')
+    
+    password = base_pass.upper()
+    alternate = alt_pass.upper()
+    
+    match = re.search(password, alternate) 
+    if match is not None:
+    	print("ok") 
+    else: 
+        print("nah") 
+    
+    #alternative = match.group('password')
+    #check_password = base_pass.upper() 
+    #check_alternative = alt_pass.upper()
     
     #if len(alternative) 
-    if alternative == password:
-        print("ok") 
-    else:
-        print("nah") 
+    #if check_alternative == check_password:
+    #    print("ok") 
+    #else:
+    #    print("nah") 
 
    
 
