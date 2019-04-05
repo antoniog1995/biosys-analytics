@@ -19,7 +19,7 @@ def get_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
-        'password', metavar='PASSWORD', help='baseline password')
+        'password', metavar='PASSWORD', help='baseline password')#required=True)
 
     parser.add_argument(
        'alternate',
