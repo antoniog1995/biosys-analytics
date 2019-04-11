@@ -50,6 +50,7 @@ def dist(s1, s2):
     for a,b in zip(s1,s2):
         if a != b:
             diff_count +=1
+    logging.debug('s1 = {}, s2 = {}, d = {}'.format(s1,s2,diff_count))
     return diff_count     
     
 # --------------------------------------------------
@@ -64,27 +65,17 @@ def main():
         die('"{}" is not a file'.format(file1))
     if not os.path.isfile(file2):
         die('"{}" is not a file'.format(file2))
-    print(debug_flag) 
     
     logging.basicConfig(filename='.log',filemode='w',level=logging.DEBUG if args.debug else logging.CRITICAL)
     
-    #if debug_flag is True:
-    #    logging.debug('Starting') 
-    #    for i in range(1, 11): 
-    #        method = random.choice([logging.info, logging.warning, logging.error, logging.critical, logging.debug])
-    #        method('{}: Hey!'.format(i))
-    #        time.sleep(1)
-    #    logging.debug('Done')
-    #    print('Done.')  
-        
+    
+    logging.debug('file1 = {}, file2 = {}'.format(file1, file2)) 
+
     open1 = open(file1,"r")
     open2 = open(file2,"r") 
     text1 = open1.read().split()
     text2 = open2.read().split()
-    #print('{} \n {}'.format(text1,text2))
-    #print(text1)
-    #print(text2)
-    #for word1, word2 in zip(text1, text2): 
+
     for word1, word2 in zip(text1, text2):
         dist_count += dist(word1, word2) 
     
