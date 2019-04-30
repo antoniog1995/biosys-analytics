@@ -7,7 +7,7 @@ Purpose: Rock the Casbah
 
 import argparse
 import sys
-import tabulate
+from tabulate import tabulate
 import re
 import os 
 import logging 
@@ -156,7 +156,7 @@ def main():
     headers = ["word1", "word2", "distance"]
     
     logging.basicConfig(filename=logfile_output, filemode='w', level=logging.DEBUG if args.debug else logging.CRITICAL)
-    
+    logging.debug('fh1 = {}, fh2 = {}'.format(fh1,fh2))
     
     if hamming_dist < 0:
         die('--distance "{}" must be > 0'.format(hamming_dist))
@@ -164,13 +164,16 @@ def main():
     words2 = uniq_words(fh2, min_length) 
     common_words = common(words1, words2, hamming_dist)
     #print(common_words) 
-    if table_flag == True: 
-        print(tabulate(common_words,headers, tablefmt="asciitable" ))
-         
-    else: 
-        print('{:7} {:7} {}'.format(headers[0],headers[1],headers[2]))
-        for entry in common_words:
-            print('{:7} {:7} {}'.format(entry[0],entry[1],entry[2]))
+    if common_words == []: 
+        print("No words in common.") 
+    else:
+        if table_flag == True: 
+            print(tabulate(common_words,headers, tablefmt="psql" ))    
+        else: 
+        #print(common_words, sep='\t')
+            print('{}\t{}\t{}'.format(headers[0],headers[1],headers[2]), sep = '\t')
+            for entry in common_words:
+                print(entry[0],entry[1],entry[2],sep="\t")
     
     
         
