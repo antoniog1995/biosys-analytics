@@ -43,7 +43,6 @@ def main():
     """Make a jazz noise here"""
     args = get_args()
     files = args.FILE
-    #l = [] 
     for file_entry in files:
         l=[]
         n=0
@@ -52,12 +51,9 @@ def main():
             print('"{}" is not a file'.format(file_entry),file=sys.stderr)
             continue
         with open(file_entry,"r") as fh:
-        #print('ok')
             for line in fh:
-                #print(line)
                 for i in re.findall(r"[-+]?\d*\.\d+|[+-]?\d+",line):
                     l.append(i) 
-                    #print(i)
             n = len(l)
             if n is 0:
                 file_average = 0.00
